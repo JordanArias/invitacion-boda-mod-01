@@ -15,128 +15,122 @@
   <link rel="stylesheet" href="css/variables.css"/>
   <link rel="stylesheet" href="css/bienvenida.css"/>
 </head>
-<body class="welcome-page-body">
+<body id="welcome-body" class="welcome-page-body bg-linen-texture page-fade-in">
 
-  <!-- Tarjeta Responsiva de Bienvenida (Mobile-First, adaptada a Tablet y PC) -->
-  <main id="invite-card" class="welcome-card bg-linen-texture page-fade-in" role="main">
+  <!-- Encabezado sutil a todo el ancho -->
+  <header class="welcome-header">
+    <span>Nuestra Boda</span>
+    <span>09 · 07 · 2025</span>
+  </header>
+
+  <!-- Sección Central: Marco Circular Dorado y Monograma -->
+  <main class="welcome-emblem-section" role="main" aria-label="Monograma de los novios">
     
-    <!-- Encabezado sutil -->
-    <header class="welcome-header">
-      <span>Nuestra Boda</span>
-      <span>09 · 07 · 2025</span>
-    </header>
+    <!-- Marco botánico SVG con iluminación dorada continua -->
+    <svg class="animate-continuous-glow" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="goldRingWelcome" x1="50" y1="40" x2="350" y2="360" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#DEB887" stop-opacity="0.55"/>
+          <stop offset="35%" stop-color="#C5A869" stop-opacity="0.95"/>
+          <stop offset="65%" stop-color="#F2DEB0" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#A58448" stop-opacity="0.65"/>
+        </linearGradient>
+        <linearGradient id="sageGradWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#95A88F" stop-opacity="0.85"/>
+          <stop offset="50%" stop-color="#6F8567" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#4F644A" stop-opacity="0.95"/>
+        </linearGradient>
+        <linearGradient id="eucalyptusWelcome" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#C3A595" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#849980" stop-opacity="0.9"/>
+        </linearGradient>
+        <linearGradient id="stemWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#B2A183"/>
+          <stop offset="100%" stop-color="#847355"/>
+        </linearGradient>
+      </defs>
 
-    <!-- Sección Central: Marco Circular Dorado y Monograma -->
-    <section class="welcome-emblem-section" aria-label="Monograma de los novios">
-      
-      <!-- Marco botánico SVG con iluminación dorada continua -->
-      <svg class="animate-continuous-glow" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="goldRingWelcome" x1="50" y1="40" x2="350" y2="360" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#DEB887" stop-opacity="0.55"/>
-            <stop offset="35%" stop-color="#C5A869" stop-opacity="0.95"/>
-            <stop offset="65%" stop-color="#F2DEB0" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#A58448" stop-opacity="0.65"/>
-          </linearGradient>
-          <linearGradient id="sageGradWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#95A88F" stop-opacity="0.85"/>
-            <stop offset="50%" stop-color="#6F8567" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#4F644A" stop-opacity="0.95"/>
-          </linearGradient>
-          <linearGradient id="eucalyptusWelcome" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#C3A595" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#849980" stop-opacity="0.9"/>
-          </linearGradient>
-          <linearGradient id="stemWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#B2A183"/>
-            <stop offset="100%" stop-color="#847355"/>
-          </linearGradient>
-        </defs>
+      <!-- Anillos concéntricos -->
+      <circle cx="200" cy="198" r="142" stroke="url(#goldRingWelcome)" stroke-width="1.6" opacity="0.88"/>
+      <circle cx="203" cy="201" r="148" stroke="url(#goldRingWelcome)" stroke-width="1.2" stroke-dasharray="320 6" opacity="0.65"/>
+      <circle cx="196" cy="195" r="136" stroke="#D1B880" stroke-width="0.8" opacity="0.45"/>
 
-        <!-- Anillos concéntricos -->
-        <circle cx="200" cy="198" r="142" stroke="url(#goldRingWelcome)" stroke-width="1.6" opacity="0.88"/>
-        <circle cx="203" cy="201" r="148" stroke="url(#goldRingWelcome)" stroke-width="1.2" stroke-dasharray="320 6" opacity="0.65"/>
-        <circle cx="196" cy="195" r="136" stroke="#D1B880" stroke-width="0.8" opacity="0.45"/>
+      <!-- Follaje botánico superior derecho -->
+      <g>
+        <path d="M 230 65 C 290 85 345 135 352 205" fill="none" stroke="url(#stemWelcome)" stroke-linecap="round" stroke-width="1.2"/>
+        <path d="M 255 75 C 265 60 285 62 292 73 C 285 88 268 85 255 75 Z" fill="url(#sageGradWelcome)"/>
+        <line x1="258" y1="75" x2="286" y2="72" stroke="#485B43" stroke-width="0.6" opacity="0.7"/>
+        <path d="M 285 92 C 305 82 322 92 320 108 C 304 115 292 105 285 92 Z" fill="url(#eucalyptusWelcome)"/>
+        <path d="M 315 125 C 335 120 348 135 345 152 C 330 155 320 142 315 125 Z" fill="url(#sageGradWelcome)"/>
+        <line x1="318" y1="128" x2="341" y2="145" stroke="#485B43" stroke-width="0.5" opacity="0.7"/>
+        <path d="M 335 160 C 358 160 366 178 358 195 C 344 192 338 178 335 160 Z" fill="url(#sageGradWelcome)"/>
+        <path d="M 345 200 C 362 210 358 230 346 242 C 336 230 336 215 345 200 Z" fill="url(#eucalyptusWelcome)" opacity="0.9"/>
+        <circle cx="280" cy="80" r="2.2" fill="#D8BE7A"/>
+        <circle cx="310" cy="114" r="2" fill="#D8BE7A"/>
+        <circle cx="342" cy="175" r="2.5" fill="#D8BE7A"/>
+        <circle cx="330" cy="225" r="1.8" fill="#C5A869"/>
+      </g>
 
-        <!-- Follaje botánico superior derecho -->
-        <g>
-          <path d="M 230 65 C 290 85 345 135 352 205" fill="none" stroke="url(#stemWelcome)" stroke-linecap="round" stroke-width="1.2"/>
-          <path d="M 255 75 C 265 60 285 62 292 73 C 285 88 268 85 255 75 Z" fill="url(#sageGradWelcome)"/>
-          <line x1="258" y1="75" x2="286" y2="72" stroke="#485B43" stroke-width="0.6" opacity="0.7"/>
-          <path d="M 285 92 C 305 82 322 92 320 108 C 304 115 292 105 285 92 Z" fill="url(#eucalyptusWelcome)"/>
-          <path d="M 315 125 C 335 120 348 135 345 152 C 330 155 320 142 315 125 Z" fill="url(#sageGradWelcome)"/>
-          <line x1="318" y1="128" x2="341" y2="145" stroke="#485B43" stroke-width="0.5" opacity="0.7"/>
-          <path d="M 335 160 C 358 160 366 178 358 195 C 344 192 338 178 335 160 Z" fill="url(#sageGradWelcome)"/>
-          <path d="M 345 200 C 362 210 358 230 346 242 C 336 230 336 215 345 200 Z" fill="url(#eucalyptusWelcome)" opacity="0.9"/>
-          <circle cx="280" cy="80" r="2.2" fill="#D8BE7A"/>
-          <circle cx="310" cy="114" r="2" fill="#D8BE7A"/>
-          <circle cx="342" cy="175" r="2.5" fill="#D8BE7A"/>
-          <circle cx="330" cy="225" r="1.8" fill="#C5A869"/>
-        </g>
+      <!-- Follaje botánico inferior izquierdo -->
+      <g>
+        <path d="M 170 338 C 110 320 60 265 52 195" fill="none" stroke="url(#stemWelcome)" stroke-linecap="round" stroke-width="1.2"/>
+        <path d="M 150 325 C 135 340 115 338 108 327 C 115 312 132 315 150 325 Z" fill="url(#sageGradWelcome)"/>
+        <line x1="145" y1="324" x2="114" y2="328" stroke="#485B43" stroke-width="0.6" opacity="0.7"/>
+        <path d="M 115 308 C 95 318 78 308 80 292 C 96 285 108 295 115 308 Z" fill="url(#eucalyptusWelcome)"/>
+        <path d="M 85 275 C 65 280 52 265 55 248 C 70 245 80 258 85 275 Z" fill="url(#sageGradWelcome)"/>
+        <line x1="82" y1="272" x2="59" y2="255" stroke="#485B43" stroke-width="0.5" opacity="0.7"/>
+        <path d="M 65 240 C 42 240 34 222 42 205 C 56 208 62 222 65 240 Z" fill="url(#eucalyptusWelcome)"/>
+        <path d="M 55 200 C 38 190 42 170 54 158 C 64 170 64 185 55 200 Z" fill="url(#sageGradWelcome)"/>
+        <circle cx="120" cy="320" r="2.2" fill="#D8BE7A"/>
+        <circle cx="90" cy="286" r="2" fill="#D8BE7A"/>
+        <circle cx="58" cy="225" r="2.5" fill="#D8BE7A"/>
+        <circle cx="70" cy="175" r="1.8" fill="#C5A869"/>
+      </g>
+    </svg>
 
-        <!-- Follaje botánico inferior izquierdo -->
-        <g>
-          <path d="M 170 338 C 110 320 60 265 52 195" fill="none" stroke="url(#stemWelcome)" stroke-linecap="round" stroke-width="1.2"/>
-          <path d="M 150 325 C 135 340 115 338 108 327 C 115 312 132 315 150 325 Z" fill="url(#sageGradWelcome)"/>
-          <line x1="145" y1="324" x2="114" y2="328" stroke="#485B43" stroke-width="0.6" opacity="0.7"/>
-          <path d="M 115 308 C 95 318 78 308 80 292 C 96 285 108 295 115 308 Z" fill="url(#eucalyptusWelcome)"/>
-          <path d="M 85 275 C 65 280 52 265 55 248 C 70 245 80 258 85 275 Z" fill="url(#sageGradWelcome)"/>
-          <line x1="82" y1="272" x2="59" y2="255" stroke="#485B43" stroke-width="0.5" opacity="0.7"/>
-          <path d="M 65 240 C 42 240 34 222 42 205 C 56 208 62 222 65 240 Z" fill="url(#eucalyptusWelcome)"/>
-          <path d="M 55 200 C 38 190 42 170 54 158 C 64 170 64 185 55 200 Z" fill="url(#sageGradWelcome)"/>
-          <circle cx="120" cy="320" r="2.2" fill="#D8BE7A"/>
-          <circle cx="90" cy="286" r="2" fill="#D8BE7A"/>
-          <circle cx="58" cy="225" r="2.5" fill="#D8BE7A"/>
-          <circle cx="70" cy="175" r="1.8" fill="#C5A869"/>
-        </g>
-      </svg>
-
-      <!-- Monograma caligráfico y fecha -->
-      <div style="position: relative; z-index: 10; text-align: center; padding: 0 1rem;">
-        <div class="welcome-monogram" aria-label="Monograma Andrés y Margot">
-          <span>A</span>
-          <span class="welcome-monogram-y">y</span>
-          <span>M</span>
-        </div>
-        <time class="welcome-wedding-date" datetime="2025-07-09">
-          09 · 07 · 2025
-        </time>
+    <!-- Monograma caligráfico y fecha -->
+    <div style="position: relative; z-index: 10; text-align: center; padding: 0 1rem;">
+      <div class="welcome-monogram" aria-label="Monograma Andrés y Margot">
+        <span>A</span>
+        <span class="welcome-monogram-y">y</span>
+        <span>M</span>
       </div>
-
-    </section>
-
-    <!-- Acciones Inferiores -->
-    <footer class="welcome-footer-actions">
-      
-      <!-- Flecha animada continua hacia abajo -->
-      <div class="animate-continuous-pulse" style="display: flex; justify-content: center; color: #8F7F73;" aria-hidden="true">
-        <svg style="width: 22px; height: 22px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </div>
-
-      <!-- Botón con animación cinemática de entrada -->
-      <button id="enter-button" type="button" class="welcome-enter-btn" aria-label="Ingresar a la invitación de boda">
-        <span style="position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
-          <span id="button-label">Ingresar a mi invitación</span>
-          <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </span>
-        <span class="welcome-btn-shine"></span>
-      </button>
-
-      <!-- Nombres de los novios -->
-      <p class="welcome-couple-tag">
-        Andrés &amp; Margot
-      </p>
-
-    </footer>
+      <time class="welcome-wedding-date" datetime="2025-07-09">
+        09 · 07 · 2025
+      </time>
+    </div>
 
   </main>
+
+  <!-- Acciones y Botón en Pie de Página -->
+  <footer class="welcome-footer-actions">
+    
+    <!-- Flecha animada continua hacia abajo -->
+    <div class="animate-continuous-pulse" style="display: flex; justify-content: center; color: #8F7F73;" aria-hidden="true">
+      <svg style="width: 26px; height: 26px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+
+    <!-- Botón con animación cinemática -->
+    <button id="enter-button" type="button" class="welcome-enter-btn" aria-label="Ingresar a la invitación de boda">
+      <span style="position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+        <span id="button-label">Ingresar a mi invitación</span>
+        <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </span>
+      <span class="welcome-btn-shine"></span>
+    </button>
+
+    <!-- Nombres de los novios -->
+    <p class="welcome-couple-tag">
+      Andrés &amp; Margot
+    </p>
+
+  </footer>
 
   <!-- Script Controlador Modular -->
   <script src="js/bienvenida.js"></script>
 </body>
 </html>
-

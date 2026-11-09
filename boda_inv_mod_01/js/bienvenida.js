@@ -6,11 +6,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const enterBtn = document.getElementById('enter-button');
-  const cardContainer = document.getElementById('invite-card');
+  const bodyEl = document.getElementById('welcome-body') || document.body;
   const btnLabel = document.getElementById('button-label');
   let isNavigating = false;
 
-  if (enterBtn && cardContainer) {
+  if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
       e.preventDefault();
       
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       enterBtn.classList.add('opacity-90', 'cursor-wait');
 
-      // Animación de salida elegante (escala suave + desvanecimiento + desenfoque leve)
-      cardContainer.classList.add('portal-closing');
+      // Animación de salida elegante a toda la página
+      bodyEl.classList.add('portal-closing');
 
       // Redirección suave a invitacion.html (650 ms para sincronizar con la animación)
       setTimeout(() => {
@@ -39,4 +39,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
