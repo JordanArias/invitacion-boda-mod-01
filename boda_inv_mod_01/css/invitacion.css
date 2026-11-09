@@ -1,0 +1,384 @@
+/* ==========================================================================
+   ESTILOS - PÁGINA PRINCIPAL DE INVITACIÓN (invitacion.html)
+   RESPONSIVE DESIGN (MÓVIL, TABLET Y PC)
+   ========================================================================== */
+
+/* Fondo general de la página */
+.invitation-page-body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #211D1B;
+  color: var(--color-stone-text);
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* En pantallas de tablet y escritorio, marco exterior y padding */
+@media (min-width: 768px) {
+  .invitation-page-body {
+    padding: 2rem 1.5rem;
+    background: radial-gradient(circle at top, #2C2622 0%, #151312 100%);
+  }
+}
+
+/* Contenedor Responsivo Principal */
+.invitation-main-container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #FAF8F5;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-width 0.3s ease;
+}
+
+/* Adaptación Responsive para Tablet */
+@media (min-width: 768px) {
+  .invitation-main-container {
+    max-width: 750px;
+    min-height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(197, 168, 105, 0.2);
+    margin: 0 auto;
+  }
+}
+
+/* Adaptación Responsive para PC y Pantallas Grandes */
+@media (min-width: 1024px) {
+  .invitation-main-container {
+    max-width: 980px;
+  }
+}
+
+/* Barra Superior de Navegación */
+.top-nav-bar {
+  width: 100%;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(214, 203, 188, 0.6);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+@media (min-width: 768px) {
+  .top-nav-bar {
+    padding: 1rem 2rem;
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN HERO / PORTADA RESPONSIVE
+   ========================================================================== */
+.hero-header-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-image-wrapper {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-image-wrapper {
+    height: 560px;
+  }
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-cover: cover;
+  object-position: center;
+  filter: brightness(1.02) contrast(0.98);
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 40%, #FAF8F5 100%);
+}
+
+.hero-curved-mask {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: #FAF8F5;
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+/* Medallón de love.gif (Visible continuamente sin hover) */
+.love-gif-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1.5px solid var(--color-gold-warm);
+  box-shadow: 0 4px 15px rgba(197, 168, 105, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.love-gif-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   GRIDS RESPONSIVOS (Tablet y PC)
+   ========================================================================== */
+/* Grid de 2 columnas para Ubicaciones, Regalos y Código de Vestimenta */
+.responsive-two-col-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .responsive-two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+}
+
+/* Grid de 3 columnas para Padres y Padrinos en Tablet y PC */
+.parents-responsive-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .parents-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+
+/* ==========================================================================
+   TARJETAS DE LUGARES Y ESTILOS
+   ========================================================================== */
+.location-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(220, 210, 195, 0.9);
+  box-shadow: 0 10px 30px -8px rgba(78, 64, 53, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenedor de iconos animados en tarjetas (Siempre activo sin hover) */
+.animated-icon-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 9999px;
+  background-color: var(--color-sage-50);
+  border: 1px solid var(--color-sage-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(91, 112, 83, 0.12);
+}
+
+.animated-icon-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   ITINERARIO CON NODOS ANIMADOS PERMANENTES
+   ========================================================================== */
+.itinerary-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.itinerary-spine {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  bottom: 2rem;
+  width: 2px;
+  transform: translateX(-50%);
+  border-left: 2px dotted var(--color-gold-warm);
+}
+
+.itinerary-node-icon {
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-gold-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.itinerary-node-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   GALERÍA RESPONSIVA Y POLAROID
+   ========================================================================== */
+.polaroid-card {
+  background-color: #ffffff;
+  padding: 0.85rem 0.85rem 2rem 0.85rem;
+  border-radius: 2px;
+  box-shadow: 0 15px 35px -5px rgba(50, 40, 30, 0.18);
+  border: 1px solid rgba(220, 210, 195, 0.9);
+  max-width: 290px;
+  margin: 0 auto 2rem auto;
+  transform: rotate(-2.5deg);
+  transition: transform 0.4s ease;
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background-color: #EAE6DF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* ==========================================================================
+   BOTONES Y TOAST
+   ========================================================================== */
+.btn-primary-terracotta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-terracotta);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(166, 124, 82, 0.35);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary-terracotta:hover {
+  background-color: var(--color-terracotta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(166, 124, 82, 0.45);
+}
+
+.btn-primary-terracotta:active {
+  transform: translateY(0);
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: rgba(30, 26, 24, 0.96);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-gold);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

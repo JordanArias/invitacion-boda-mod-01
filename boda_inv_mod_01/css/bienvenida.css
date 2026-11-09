@@ -1,0 +1,197 @@
+/* ==========================================================================
+   ESTILOS - PÁGINA DE BIENVENIDA (index.html)
+   ========================================================================== */
+
+/* Contenedor principal de la página */
+.welcome-page-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: #1F1C1A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans);
+  color: var(--color-stone-text);
+  overflow-x: hidden;
+}
+
+/* Tarjeta responsiva de bienvenida */
+.welcome-card {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--color-linen);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Adaptación para Tablet y PC (Responsive) */
+@media (min-width: 640px) {
+  .welcome-page-body {
+    padding: 2.5rem 1rem;
+    background: radial-gradient(circle at center, #2e2823 0%, #171514 100%);
+  }
+
+  .welcome-card {
+    max-width: 460px;
+    min-height: auto;
+    height: 780px;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(197, 168, 105, 0.25);
+    padding: 3rem 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .welcome-card {
+    max-width: 480px;
+    height: 800px;
+  }
+}
+
+/* Header superior */
+.welcome-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #6C625B;
+  opacity: 0.85;
+  padding: 0 0.5rem;
+}
+
+/* Sección central con el monograma */
+.welcome-emblem-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+  width: 100%;
+  max-width: 330px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Monograma caligráfico */
+.welcome-monogram {
+  font-family: var(--font-script-alex);
+  font-size: 4.25rem;
+  line-height: 1;
+  color: #795F45;
+  user-select: none;
+  transition: transform 0.4s ease;
+}
+
+@media (min-width: 640px) {
+  .welcome-monogram {
+    font-size: 5rem;
+  }
+}
+
+.welcome-monogram-y {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: #9A7B56;
+  opacity: 0.85;
+  padding: 0 0.5rem;
+  vertical-align: middle;
+}
+
+/* Fecha de la boda */
+.welcome-wedding-date {
+  margin-top: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.28em;
+  color: #8C6F4F;
+  font-weight: 500;
+}
+
+/* Acciones inferiores */
+.welcome-footer-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Botón principal «Ingresar a mi invitación» */
+.welcome-enter-btn {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem 1.75rem;
+  border-radius: 9999px;
+  background-color: var(--color-terracotta);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(166, 124, 82, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  outline: none;
+}
+
+.welcome-enter-btn:hover {
+  background-color: var(--color-terracotta-hover);
+  box-shadow: 0 15px 30px -5px rgba(166, 124, 82, 0.6);
+  transform: translateY(-2px);
+}
+
+.welcome-enter-btn:active {
+  transform: translateY(1px) scale(0.98);
+  background-color: var(--color-terracotta-dark);
+}
+
+.welcome-enter-btn:focus-visible {
+  ring: 2px solid var(--color-gold);
+  ring-offset: 2px;
+}
+
+/* Brillo sutil del botón */
+.welcome-btn-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.welcome-enter-btn:hover .welcome-btn-shine {
+  transform: translateX(100%);
+}
+
+/* Pareja en pie de página */
+.welcome-couple-tag {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #7D7068;
+  letter-spacing: 0.15em;
+  margin: 0;
+}

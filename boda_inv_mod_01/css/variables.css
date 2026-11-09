@@ -1,0 +1,137 @@
+/* ==========================================================================
+   PALETA DE COLORES Y VARIABLES GLOBALES
+   ========================================================================== */
+:root {
+  --color-linen: #FAF7F2;
+  --color-champagne: #EFE9DE;
+  --color-parchment: #F9F7F2;
+  
+  --color-terracotta: #A67C52;
+  --color-terracotta-hover: #936C45;
+  --color-terracotta-dark: #7A5836;
+  
+  --color-sage-50: #F4F7F4;
+  --color-sage-100: #E4ECE3;
+  --color-sage-light: #8FA382;
+  --color-sage: #5B7053;
+  --color-sage-600: #687E69;
+  --color-sage-700: #526653;
+  --color-sage-800: #3D4D3E;
+  
+  --color-gold-light: #E2CA9C;
+  --color-gold: #C5A869;
+  --color-gold-warm: #C5A880;
+  --color-gold-dark: #9E8043;
+  
+  --color-espresso: #362B28;
+  --color-stone-text: #38302B;
+  
+  /* Fuentes */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script-alex: "Alex Brush", cursive;
+  --font-script-pinyon: "Pinyon Script", cursive;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Texturas de Fondo */
+.bg-linen-texture {
+  background-color: var(--color-linen);
+  background-image: 
+    radial-gradient(#d3c8b4 0.6px, transparent 0.6px),
+    radial-gradient(#ede4d3 0.6px, var(--color-linen) 0.6px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.bg-textured-paper {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#E8E1D5 0.75px, transparent 0.75px);
+  background-size: 18px 18px;
+}
+
+.bg-sage-wash {
+  background: linear-gradient(180deg, #5C725E 0%, #4D624E 100%);
+}
+
+/* ==========================================================================
+   MICRO-ANIMACIONES CONTINUAS (Visibles sin necesidad de hover)
+   ========================================================================== */
+@keyframes continuousGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(197, 168, 105, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(197, 168, 105, 0.6));
+  }
+}
+
+@keyframes continuousFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes continuousPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes gentleBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Clases utilitarias de animación continua */
+.animate-continuous-glow {
+  animation: continuousGlow 3.5s ease-in-out infinite;
+}
+
+.animate-continuous-float {
+  animation: continuousFloat 3s ease-in-out infinite;
+}
+
+.animate-continuous-pulse {
+  animation: continuousPulse 2.4s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: gentleBreathe 4s ease-in-out infinite;
+}
+
+/* Animación de entrada suave para la página */
+.page-fade-in {
+  animation: pageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transición de salida para la página de bienvenida */
+.portal-closing {
+  transform: scale(0.95) translateY(-8px);
+  opacity: 0;
+  filter: blur(4px);
+  transition: all 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}

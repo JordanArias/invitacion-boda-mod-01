@@ -85,3 +85,4 @@ Como es un sitio web estático (HTML/CSS/JS nativo):
    - *Build command*: (dejar vacío)
    - *Publish directory*: `.` (o dejar la raíz vacía)
 5. Haz clic en **Deploy Site**. ¡Tu invitación estará activa en segundos con certificado SSL gratis!
+
