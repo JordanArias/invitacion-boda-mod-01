@@ -76,3 +76,4 @@ git push -u origin main
 2. En la configuración del sitio:
    - **Publish directory**: `boda_inv_mod_01` (o la raíz si configuras la subcarpeta).
 3. ¡Listo! Tendrás el sitio en producción con certificado SSL inmediato.
+
