@@ -1,18 +1,19 @@
 /* ==========================================================================
    ESTILOS - PÁGINA PRINCIPAL DE INVITACIÓN (invitacion.html)
-   WEB COMPLETA Y NORMAL (MOBILE-FIRST, TABLET Y PC FULL-WIDTH)
+   DISEÑO WEB RESPONSIVO PERFECTO (MÓVIL, TABLET Y PC)
    ========================================================================== */
 
 /* Fondo general de la página web */
 .invitation-page-body {
   width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: var(--color-paper);
   color: var(--color-stone-text);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* ==========================================================================
@@ -20,9 +21,9 @@
    ========================================================================== */
 .top-nav-bar {
   width: 100%;
-  background-color: rgba(250, 248, 245, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(214, 203, 188, 0.65);
+  background-color: rgba(250, 248, 245, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(214, 203, 188, 0.7);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -33,46 +34,62 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 0.65rem 1rem;
   max-width: 1280px;
   margin: 0 auto;
+  gap: 0.5rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .top-nav-inner {
-    padding: 1.25rem 2.5rem;
+    padding: 1.15rem 2rem;
   }
 }
 
 .top-nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   color: #5A5049;
   text-decoration: none;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  transition: color 0.25s ease;
-}
-
-.top-nav-link:hover {
-  color: var(--color-terracotta);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .top-nav-title {
   font-family: var(--font-sans);
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   color: var(--color-terracotta);
   font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .top-nav-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+  }
 }
 
 .top-nav-date {
   color: #8C7F74;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-family: var(--font-serif);
   letter-spacing: 0.1em;
+  white-space: nowrap;
+  display: none;
+}
+
+@media (min-width: 520px) {
+  .top-nav-date {
+    display: block;
+  }
 }
 
 /* ==========================================================================
@@ -90,19 +107,19 @@
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 310px;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .hero-image-container {
-    height: 580px;
+    height: 460px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .hero-image-container {
-    height: 680px;
+    height: 600px;
   }
 }
 
@@ -111,13 +128,14 @@
   height: 100%;
   object-fit: cover;
   object-position: center 25%;
-  filter: brightness(1.02) contrast(0.98);
+  display: block;
 }
 
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 45%, #FAF8F5 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, transparent 40%, #FAF8F5 100%);
+  pointer-events: none;
 }
 
 .hero-wave-mask {
@@ -125,31 +143,32 @@
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 40px;
   background-color: #FAF8F5;
   clip-path: ellipse(55% 100% at 50% 100%);
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .hero-wave-mask {
-    height: 80px;
-    clip-path: ellipse(50% 100% at 50% 100%);
+    height: 70px;
   }
 }
 
 /* Frase Poética */
 .hero-quote-wrapper {
-  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 1.25rem 1rem 0.5rem 1rem;
   text-align: center;
-  max-width: 780px;
+  max-width: 680px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hero-quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.55;
   color: #5C524B;
   font-weight: 300;
   margin: 0;
@@ -157,7 +176,7 @@
 
 @media (min-width: 768px) {
   .hero-quote {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -168,19 +187,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1.5rem 3rem 1.5rem;
+  padding: 1rem 1rem 2rem 1rem;
+  box-sizing: border-box;
 }
 
 .hero-wreath-box {
   position: relative;
-  width: 290px;
-  height: 290px;
+  width: 240px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .hero-wreath-box {
+    width: 310px;
+    height: 310px;
+  }
+}
+
+@media (min-width: 1024px) {
   .hero-wreath-box {
     width: 360px;
     height: 360px;
@@ -189,22 +217,28 @@
 
 .hero-names-title {
   font-family: var(--font-script-pinyon);
-  font-size: 4.25rem;
+  font-size: 2.85rem;
   color: var(--color-sage-800);
   margin: 0;
   line-height: 0.95;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .hero-names-title {
-    font-size: 5.5rem;
+    font-size: 4.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-names-title {
+    font-size: 5rem;
   }
 }
 
 .hero-ampersand {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--color-gold-warm);
   display: block;
   margin: -0.25rem 0;
@@ -212,31 +246,31 @@
 
 @media (min-width: 768px) {
   .hero-ampersand {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
   }
 }
 
 /* Medallón love.gif (Visible continuamente sin hover) */
 .love-gif-badge {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   border-radius: 9999px;
   background: #ffffff;
   border: 1.5px solid var(--color-gold-warm);
-  box-shadow: 0 6px 20px rgba(197, 168, 105, 0.4);
+  box-shadow: 0 4px 14px rgba(197, 168, 105, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
+  padding: 6px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 @media (min-width: 768px) {
   .love-gif-badge {
-    width: 74px;
-    height: 74px;
-    padding: 10px;
+    width: 66px;
+    height: 66px;
+    padding: 8px;
   }
 }
 
@@ -248,107 +282,119 @@
 }
 
 .hero-pill-badge {
-  padding: 0.6rem 2rem;
+  padding: 0.45rem 1.6rem;
   border-radius: 9999px;
   border: 1px solid rgba(104, 126, 105, 0.35);
   background-color: var(--color-sage-50);
   color: var(--color-sage-800);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
 }
 
 @media (min-width: 768px) {
   .hero-pill-badge {
-    font-size: 0.95rem;
-    padding: 0.75rem 2.5rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 2.25rem;
   }
 }
 
 /* ==========================================================================
-   SECCIONES FULL-WIDTH CON CONTENEDOR INTERIOR
+   SECCIONES FULL-WIDTH Y TÍTULOS
    ========================================================================== */
 .web-section {
   width: 100%;
-  padding: 4rem 1.5rem;
+  padding: 2.75rem 0.5rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .web-section {
-    padding: 5.5rem 2.5rem;
+    padding: 4.5rem 1.5rem;
   }
 }
 
 .section-title-wrap {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .section-title-wrap {
+    margin-bottom: 2.75rem;
+  }
 }
 
 .section-pre-title {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-family: var(--font-sans);
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.22em;
   color: var(--color-terracotta);
   font-weight: 600;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .section-main-title {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: var(--color-sage-800);
   margin: 0;
   font-weight: 600;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .section-main-title {
-    font-size: 3.25rem;
+    font-size: 2.35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-main-title {
+    font-size: 2.85rem;
   }
 }
 
 .section-gold-divider {
-  width: 60px;
+  width: 45px;
   height: 2px;
   background-color: var(--color-gold-warm);
-  margin: 1rem auto 0 auto;
+  margin: 0.75rem auto 0 auto;
 }
 
 /* ==========================================================================
-   SECCIÓN 2: PADRES Y PADRINOS (3 Columnas en PC)
+   SECCIÓN 2: PADRES Y PADRINOS
    ========================================================================== */
 .parents-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.15rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .parents-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
 .parents-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  padding: 2rem 1.5rem;
-  border-radius: 1.25rem;
+  padding: 1.4rem 1rem;
+  border-radius: 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.parents-card:hover {
-  transform: translateY(-3px);
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -356,103 +402,117 @@
    ========================================================================== */
 .countdown-box-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
   width: 100%;
-  max-width: 620px;
-  margin: 0 auto 2.5rem auto;
+  max-width: 320px;
+  margin: 0 auto 1.75rem auto;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .countdown-box-grid {
-    gap: 1.5rem;
+    gap: 0.85rem;
+    max-width: 520px;
   }
 }
 
 .countdown-unit-card {
   background: #ffffff;
-  border-radius: 1rem;
-  padding: 1.25rem 0.75rem;
+  border-radius: 0.65rem;
+  padding: 0.75rem 0.2rem;
   border: 1px solid rgba(214, 203, 188, 0.85);
-  box-shadow: 0 6px 20px rgba(78, 64, 53, 0.06);
+  box-shadow: 0 4px 12px rgba(78, 64, 53, 0.05);
   text-align: center;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .countdown-unit-card {
+    padding: 1.1rem 0.65rem;
+    border-radius: 0.85rem;
+  }
 }
 
 .countdown-num {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-sage-800);
   display: block;
   line-height: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .countdown-num {
-    font-size: 3.25rem;
+    font-size: 2.5rem;
   }
 }
 
 .countdown-label {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: #7D7068;
   font-weight: 600;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   display: block;
 }
 
+@media (min-width: 640px) {
+  .countdown-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-top: 0.45rem;
+  }
+}
+
 /* ==========================================================================
-   SECCIÓN 4: UBICACIONES (2 Columnas en PC)
+   SECCIÓN 4: UBICACIONES (1 col móvil, 2 cols en PC)
    ========================================================================== */
 .locations-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.25rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .locations-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 1.85rem;
   }
 }
 
 .location-card {
   background-color: #ffffff;
-  border-radius: 1.5rem;
-  padding: 2.5rem 2rem;
+  border-radius: 1.15rem;
+  padding: 1.75rem 1.15rem;
   border: 1px solid rgba(220, 210, 195, 0.9);
-  box-shadow: 0 12px 35px -8px rgba(78, 64, 53, 0.08);
+  box-shadow: 0 8px 25px -8px rgba(78, 64, 53, 0.08);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.location-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 45px -10px rgba(78, 64, 53, 0.14);
+  box-sizing: border-box;
 }
 
 .animated-icon-badge {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 9999px;
   background-color: var(--color-sage-50);
   border: 1.5px solid var(--color-sage-100);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem auto;
-  padding: 12px;
-  box-shadow: 0 6px 18px rgba(91, 112, 83, 0.15);
+  margin: 0 auto 1rem auto;
+  padding: 8px;
+  box-shadow: 0 5px 14px rgba(91, 112, 83, 0.12);
 }
 
 .animated-icon-badge img {
@@ -463,13 +523,15 @@
 }
 
 /* ==========================================================================
-   SECCIÓN 5: ITINERARIO
+   SECCIÓN 5: ITINERARIO (Alineación Simétrica Cero Overflow)
    ========================================================================== */
 .itinerary-container {
   position: relative;
-  max-width: 720px;
+  width: 100%;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 1.5rem 0.5rem;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
 }
 
 .itinerary-spine {
@@ -487,27 +549,41 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2.75rem;
+  gap: 0.35rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 .itinerary-side {
-  width: 42%;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .itinerary-node-icon {
   z-index: 10;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 9999px;
   background-color: #ffffff;
   border: 2px solid var(--color-gold-warm);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 6px;
   overflow: hidden;
   flex-shrink: 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .itinerary-node-icon {
+    width: 52px;
+    height: 52px;
+    padding: 7px;
+  }
 }
 
 .itinerary-node-icon img {
@@ -518,18 +594,19 @@
 }
 
 /* ==========================================================================
-   SECCIÓN 6: GALERÍA (4 Columnas en PC)
+   SECCIÓN 6: GALERÍA
    ========================================================================== */
 .polaroid-card {
   background-color: #ffffff;
-  padding: 1rem 1rem 2.5rem 1rem;
+  padding: 0.65rem 0.65rem 1.75rem 0.65rem;
   border-radius: 2px;
-  box-shadow: 0 18px 40px -5px rgba(50, 40, 30, 0.18);
+  box-shadow: 0 12px 30px -5px rgba(50, 40, 30, 0.18);
   border: 1px solid rgba(220, 210, 195, 0.9);
-  max-width: 340px;
-  margin: 0 auto 3rem auto;
+  max-width: 250px;
+  margin: 0 auto 2.25rem auto;
   transform: rotate(-2.5deg);
   transition: transform 0.4s ease;
+  box-sizing: border-box;
 }
 
 .polaroid-card:hover {
@@ -539,24 +616,25 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 1100px;
+  gap: 0.55rem;
+  max-width: 1000px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1.15rem;
   }
 }
 
 .gallery-item {
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   background-color: #EAE6DF;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
   cursor: pointer;
   position: relative;
 }
@@ -565,51 +643,55 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s ease;
+  display: block;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 /* ==========================================================================
-   SECCIONES 7 & 8: VESTIMENTA Y REGALOS (2 Columnas en PC)
+   SECCIONES 7 & 8: VESTIMENTA Y REGALOS
    ========================================================================== */
 .two-col-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 1050px;
+  gap: 1.25rem;
+  max-width: 950px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .two-col-cards-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 1.75rem;
   }
 }
 
 .dress-code-card {
   background-color: #ffffff;
-  border-radius: 1.5rem;
-  padding: 2.5rem 2rem;
+  border-radius: 1.15rem;
+  padding: 1.75rem 1.15rem;
   border: 1px solid rgba(220, 210, 195, 0.9);
-  box-shadow: 0 12px 35px -8px rgba(78, 64, 53, 0.08);
+  box-shadow: 0 8px 25px -8px rgba(78, 64, 53, 0.08);
   text-align: center;
+  box-sizing: border-box;
 }
 
 .gift-card {
   background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  border-radius: 1.5rem;
-  padding: 2.5rem 2rem;
+  border-radius: 1.15rem;
+  padding: 1.75rem 1.15rem;
   border: 1px solid rgba(239, 233, 222, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -626,9 +708,9 @@
   transform: translateX(-50%) translateY(30px);
   background-color: rgba(30, 26, 24, 0.96);
   color: #ffffff;
-  padding: 0.9rem 2rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 9999px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-family: var(--font-sans);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   border: 1px solid var(--color-gold);
@@ -636,6 +718,7 @@
   opacity: 0;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1000;
+  white-space: nowrap;
 }
 
 .toast-notification.show {

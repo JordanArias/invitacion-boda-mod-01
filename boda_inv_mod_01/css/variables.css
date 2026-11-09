@@ -35,9 +35,17 @@
   --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Reset Global & Base */
+/* Reset Global & Control Estricto de Overflow */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
 }
 
 html {
@@ -46,14 +54,10 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
   color: var(--color-stone-text);
   font-family: var(--font-sans);
   background-color: var(--color-paper);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 /* Texturas de Fondo a pantalla completa */
@@ -76,23 +80,39 @@ body {
   background: linear-gradient(180deg, #5C725E 0%, #4D624E 100%);
 }
 
-/* Contenedores Estándar Web Responsivos */
+/* Contenedores Responsivos Libres de Overflow */
 .web-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .web-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .web-container-narrow {
   width: 100%;
-  max-width: 860px;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .web-container-narrow {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Micro-animaciones Continuas (Sin necesidad de hover) */
@@ -101,7 +121,7 @@ body {
     filter: drop-shadow(0 0 2px rgba(197, 168, 105, 0.35));
   }
   50% {
-    filter: drop-shadow(0 0 10px rgba(197, 168, 105, 0.65));
+    filter: drop-shadow(0 0 8px rgba(197, 168, 105, 0.65));
   }
 }
 
@@ -110,7 +130,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
 
@@ -120,7 +140,7 @@ body {
     opacity: 0.6;
   }
   50% {
-    transform: translateY(6px);
+    transform: translateY(5px);
     opacity: 1;
   }
 }
@@ -166,7 +186,7 @@ body {
 @keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
