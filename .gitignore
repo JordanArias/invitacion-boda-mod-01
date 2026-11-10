@@ -3,12 +3,19 @@
 Thumbs.db
 desktop.ini
 
-# Editores
+# Editores y temporales
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Logs y temporales
 *.log
 
+# ==============================================================================
+# Ignorar todos los archivos y carpetas fuera del proyecto boda_inv_mod_01
+# ==============================================================================
+/*
+
+# Exceptuar el archivo .gitignore y la carpeta boda_inv_mod_01
+!.gitignore
+!/boda_inv_mod_01/
+!/boda_inv_mod_01/**
