@@ -18,6 +18,11 @@
 <body class="invitation-page-body bg-textured-paper page-fade-in">
 
   <!-- ====================================================================
+       CONTENEDOR DE FLORES FLOTANTES EN EL FONDO (flower.png)
+       ==================================================================== -->
+  <div id="floating-flowers-container" class="floating-flowers-container" aria-hidden="true"></div>
+
+  <!-- ====================================================================
        BARRA SUPERIOR DE NAVEGACIÓN
        ==================================================================== -->
   <nav class="top-nav-bar" aria-label="Navegación principal">
@@ -256,7 +261,7 @@
               Ceremonia Religiosa
             </h3>
             <p style="font-family: var(--font-serif); font-size: 2.35rem; color: #2E2824; font-weight: 500; margin: 0.5rem 0;">
-              16:30 hrs
+              15:00 hrs
             </p>
             <p style="font-family: var(--font-serif); font-size: 1.35rem; color: #4F453E; margin: 0; font-weight: 400;">
               Basílica Catedral de San Jerónimo
@@ -275,7 +280,7 @@
         <article class="location-card">
           <div>
             <div class="animated-icon-badge animate-breathe" title="Recepción & Banquete">
-              <img src="iconos/brindis.gif" alt="Copas de Brindis"/>
+              <img src="iconos/celebration.gif" alt="Recepción"/>
             </div>
             
             <span style="font-size: 0.72rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.22em; color: var(--color-terracotta); font-weight: 600; display: block; margin-bottom: 0.4rem;">
@@ -285,7 +290,7 @@
               Recepción &amp; Fiesta
             </h3>
             <p style="font-family: var(--font-serif); font-size: 2.35rem; color: #2E2824; font-weight: 500; margin: 0.5rem 0;">
-              18:00 hrs
+              16:30 hrs
             </p>
             <p style="font-family: var(--font-serif); font-size: 1.35rem; color: #4F453E; margin: 0; font-weight: 400;">
               Hacienda Villa Santa María
@@ -305,7 +310,7 @@
   </section>
 
   <!-- ====================================================================
-       5. ITINERARIO (100% Simétrico y sin desbordamiento horizontal)
+       5. ITINERARIO DE NUESTRA BODA (Animados Continuos, Alternantes, Sin Fondos Ni Bordes)
        ==================================================================== -->
   <section class="web-section" style="background-color: #F8F5EE; border-top: 1px solid rgba(220, 210, 195, 0.6); border-bottom: 1px solid rgba(220, 210, 195, 0.6);" aria-label="Itinerario de la boda">
     <div class="web-container">
@@ -316,101 +321,75 @@
         <div class="section-gold-divider"></div>
       </div>
 
-      <div class="itinerary-container">
-        <!-- Espina punteada central -->
-        <div class="itinerary-spine" aria-hidden="true"></div>
+      <div class="itinerary-custom-timeline">
+        <!-- Guía sutil central punteada en oro -->
+        <div class="itinerary-custom-line" aria-hidden="true"></div>
 
-        <div>
+        <div class="itinerary-rows-wrap">
           
-          <!-- Evento 1: Ceremonia Nupcial (con iglesia.gif continuo) -->
-          <div class="itinerary-item">
-            <div class="itinerary-side" style="text-align: right; padding-right: 0.6rem;">
-              <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-sage-800); display: block; line-height: 1.1;">16:30 hrs</span>
-              <p style="font-size: 0.8rem; color: #5C524B; font-weight: 500; margin: 0.2rem 0 0 0; line-height: 1.2;">Ceremonia Nupcial</p>
+          <!-- Fila 1: Icono iglesia.gif | 15:00 hrs <br> Ceremonia religiosa -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <img src="iconos/iglesia.gif" alt="Ceremonia religiosa" class="itinerary-pure-gif" />
             </div>
-            
-            <div class="itinerary-node-icon animate-continuous-float" title="Ceremonia">
-              <img src="iconos/iglesia.gif" alt="Iglesia"/>
-            </div>
-            
-            <div class="itinerary-side" style="text-align: left; padding-left: 0.6rem;">
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-terracotta); font-weight: 600; line-height: 1.2; display: block;">
-                Templo Mayor
-              </span>
+            <div class="itinerary-col itinerary-col-right">
+              <span class="itinerary-time-text">15:00 hrs</span>
+              <span class="itinerary-desc-text">Ceremonia religiosa</span>
             </div>
           </div>
 
-          <!-- Evento 2: Cóctel de Bienvenida (con brindis.gif continuo) -->
-          <div class="itinerary-item">
-            <div class="itinerary-side" style="text-align: right; padding-right: 0.6rem;">
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-terracotta); font-weight: 600; line-height: 1.2; display: block;">
-                Jardín Principal
-              </span>
+          <!-- Fila 2: 16:30 hrs <br> Recepción y mesa de charcutería | Icono celebration.gif -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <span class="itinerary-time-text">16:30 hrs</span>
+              <span class="itinerary-desc-text">Recepción y mesa de charcutería</span>
             </div>
-            
-            <div class="itinerary-node-icon animate-continuous-float" title="Cóctel">
-              <img src="iconos/brindis.gif" alt="Cóctel"/>
-            </div>
-            
-            <div class="itinerary-side" style="text-align: left; padding-left: 0.6rem;">
-              <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-sage-800); display: block; line-height: 1.1;">18:00 hrs</span>
-              <p style="font-size: 0.8rem; color: #5C524B; font-weight: 500; margin: 0.2rem 0 0 0; line-height: 1.2;">Cóctel de Bienvenida</p>
+            <div class="itinerary-col itinerary-col-right">
+              <img src="iconos/celebration.gif" alt="Recepción y mesa de charcutería" class="itinerary-pure-gif" />
             </div>
           </div>
 
-          <!-- Evento 3: Banquete & Cena (Icono Gastronómico continuo) -->
-          <div class="itinerary-item">
-            <div class="itinerary-side" style="text-align: right; padding-right: 0.6rem;">
-              <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-sage-800); display: block; line-height: 1.1;">19:30 hrs</span>
-              <p style="font-size: 0.8rem; color: #5C524B; font-weight: 500; margin: 0.2rem 0 0 0; line-height: 1.2;">Banquete &amp; Cena</p>
+          <!-- Fila 3: Icono Novios_bailando.gif | 17:10 hrs <br> Entrada de los recién casados -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <img src="iconos/Novios_bailando.gif" alt="Entrada de los recién casados" class="itinerary-pure-gif" />
             </div>
-            
-            <div class="itinerary-node-icon animate-breathe" style="background-color: var(--color-sage-700); border-color: var(--color-sage-800); color: #ffffff;" title="Banquete">
-              <svg style="width: 22px; height: 22px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
-              </svg>
-            </div>
-            
-            <div class="itinerary-side" style="text-align: left; padding-left: 0.6rem;">
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-terracotta); font-weight: 600; line-height: 1.2; display: block;">
-                Gran Salón
-              </span>
+            <div class="itinerary-col itinerary-col-right">
+              <span class="itinerary-time-text">17:10 hrs</span>
+              <span class="itinerary-desc-text">Entrada de los recién casados</span>
             </div>
           </div>
 
-          <!-- Evento 4: Vals & Brindis (con Novios_bailando.gif continuo) -->
-          <div class="itinerary-item">
-            <div class="itinerary-side" style="text-align: right; padding-right: 0.6rem;">
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-terracotta); font-weight: 600; line-height: 1.2; display: block;">
-                Pista Central
-              </span>
+          <!-- Fila 4: 17:30 hrs <br> Brindis y música | Icono brindis.gif -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <span class="itinerary-time-text">17:30 hrs</span>
+              <span class="itinerary-desc-text">Brindis y música</span>
             </div>
-            
-            <div class="itinerary-node-icon animate-continuous-float" title="Vals nupcial">
-              <img src="iconos/Novios_bailando.gif" alt="Novios Bailando"/>
-            </div>
-            
-            <div class="itinerary-side" style="text-align: left; padding-left: 0.6rem;">
-              <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-sage-800); display: block; line-height: 1.1;">21:00 hrs</span>
-              <p style="font-size: 0.8rem; color: #5C524B; font-weight: 500; margin: 0.2rem 0 0 0; line-height: 1.2;">Vals &amp; Brindis</p>
+            <div class="itinerary-col itinerary-col-right">
+              <img src="iconos/brindis.gif" alt="Brindis y música" class="itinerary-pure-gif" />
             </div>
           </div>
 
-          <!-- Evento 5: Fiesta & Banda en Vivo (con celebration.gif continuo) -->
-          <div class="itinerary-item" style="margin-bottom: 0;">
-            <div class="itinerary-side" style="text-align: right; padding-right: 0.6rem;">
-              <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-sage-800); display: block; line-height: 1.1;">22:00 hrs</span>
-              <p style="font-size: 0.8rem; color: #5C524B; font-weight: 500; margin: 0.2rem 0 0 0; line-height: 1.2;">Fiesta &amp; Banda</p>
+          <!-- Fila 5: Icono dinner.gif | 19:30 hrs <br> Cena -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <img src="iconos/dinner.gif" alt="Cena" class="itinerary-pure-gif" />
             </div>
-            
-            <div class="itinerary-node-icon animate-continuous-float" title="Celebración y fiesta">
-              <img src="iconos/celebration.gif" alt="Celebración"/>
+            <div class="itinerary-col itinerary-col-right">
+              <span class="itinerary-time-text">19:30 hrs</span>
+              <span class="itinerary-desc-text">Cena</span>
             </div>
-            
-            <div class="itinerary-side" style="text-align: left; padding-left: 0.6rem;">
-              <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-terracotta); font-weight: 600; line-height: 1.2; display: block;">
-                ¡Hasta el Amanecer!
-              </span>
+          </div>
+
+          <!-- Fila 6: 20:30 hrs <br> ¡Fiesta! | Icono party.gif -->
+          <div class="itinerary-custom-row">
+            <div class="itinerary-col itinerary-col-left">
+              <span class="itinerary-time-text">20:30 hrs</span>
+              <span class="itinerary-desc-text">¡Fiesta!</span>
+            </div>
+            <div class="itinerary-col itinerary-col-right">
+              <img src="iconos/party.gif" alt="¡Fiesta!" class="itinerary-pure-gif" />
             </div>
           </div>
 
@@ -519,72 +498,79 @@
   </section>
 
   <!-- ====================================================================
-       8. SUGERENCIA DE REGALOS
+       8. SUGERENCIA DE REGALOS (regalo.gif, Frase, Transferencia QR e Imagen QR)
        ==================================================================== -->
   <section class="web-section bg-sage-wash" style="color: var(--color-parchment);" aria-label="Sugerencias de regalos">
     <div class="web-container">
       
-      <div class="section-title-wrap">
-        <div style="width: 48px; height: 48px; border-radius: 9999px; background-color: rgba(239, 233, 222, 0.2); color: var(--color-champagne); margin: 0 auto 0.85rem auto; display: flex; align-items: center; justify-content: center;">
-          <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-          </svg>
+      <div class="section-title-wrap" style="text-align: center;">
+        
+        <!-- Icono regalo.gif animado continuo sin fondo ni bordes -->
+        <div class="gift-icon-pure-wrap">
+          <img src="iconos/regalo.gif" alt="Regalo de bodas" class="gift-pure-gif" />
         </div>
         
         <h2 style="font-family: var(--font-script-pinyon); font-size: 3.25rem; color: var(--color-champagne); margin: 0; line-height: 1;">
           Sugerencia de Regalos
         </h2>
-        <p style="font-family: var(--font-serif); font-size: 1.05rem; color: rgba(239, 233, 222, 0.9); font-style: italic; margin-top: 0.5rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-          Su presencia y cariño son nuestro mayor tesoro. Si desean tener un detalle con nosotros, dejamos estas opciones:
+        
+        <!-- Frase -->
+        <p style="font-family: var(--font-serif); font-size: 1.1rem; color: rgba(239, 233, 222, 0.95); font-style: italic; margin-top: 0.75rem; margin-bottom: 2rem; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+          «El mejor regalo es tu presencia y bendición en nuestro gran día. Si además deseas hacernos un presente o contribuir a nuestra luna de miel, te dejamos esta opción:»
         </p>
       </div>
 
-      <div class="two-col-cards-grid">
+      <!-- Tarjeta: Transferencia QR e Imagen QR -->
+      <div class="qr-gift-card">
+        <span class="qr-gift-badge">Transferencia QR</span>
+        <h3 class="qr-gift-title">Depósito o Transferencia Inmediata</h3>
+        <p class="qr-gift-subtitle">Escanea el código QR desde tu app bancaria favorita (Yape, Plin o BCP):</p>
         
-        <!-- Mesa de Regalos Falabella -->
-        <div class="gift-card">
-          <div>
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(239, 233, 222, 0.75); font-family: var(--font-sans); font-weight: 600; display: block; margin-bottom: 0.4rem;">
-              Mesa de Regalos
-            </span>
-            <p style="font-family: var(--font-serif); font-size: 2rem; color: #ffffff; font-weight: 500; margin: 0 0 0.4rem 0;">
-              Falabella / Liverpool
-            </p>
-            <p style="font-size: 0.9rem; color: rgba(239, 233, 222, 0.95); font-family: monospace; margin-bottom: 1.75rem;">
-              Evento N°: <strong style="color: #ffffff; font-size: 1.05rem;">749281-01</strong>
-            </p>
-          </div>
-          
-          <a href="https://www.falabella.com" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 0.9rem 1.25rem; background-color: var(--color-champagne); color: #2B211E; border-radius: 0.75rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.18);">
-            Ver Mesa de Novios
-          </a>
+        <!-- Espacio e Imagen del Código QR -->
+        <div class="qr-image-wrapper">
+          <img src="img/qr_transferencia.svg" alt="Código QR para Transferencia Bancaria Boda Andrés &amp; Margot" />
         </div>
 
-        <!-- Transferencia Bancaria BCP -->
-        <div class="gift-card">
-          <div>
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(239, 233, 222, 0.75); font-family: var(--font-sans); font-weight: 600; display: block; margin-bottom: 0.4rem;">
-              Sobre o Transferencia
-            </span>
-            <p style="font-family: var(--font-serif); font-size: 1.9rem; color: #ffffff; font-weight: 500; margin: 0 0 0.6rem 0;">
-              Depósito Bancario (BCP)
-            </p>
-            
-            <div style="font-size: 0.85rem; color: rgba(239, 233, 222, 0.9); line-height: 1.7; margin-bottom: 1.75rem; word-break: break-all;">
-              <p style="margin: 0 0 0.35rem 0;">Cuenta Soles: <strong style="font-family: monospace; color: #ffffff; font-size: 0.92rem;">191-98765432-0-88</strong></p>
-              <p style="margin: 0 0 0.35rem 0;">CCI: <strong style="font-family: monospace; color: #ffffff; font-size: 0.92rem;" id="cci-number">00219100987654320885</strong></p>
-              <p style="margin: 0; font-size: 0.75rem; color: rgba(239, 233, 222, 0.75);">Titular: Andrés Del Valle &amp; Margot Ortiz</p>
-            </div>
-          </div>
+        <span class="qr-scan-hint">Acepta pagos y transferencias desde cualquier banco o billetera</span>
 
-          <button id="copy-bank-btn" type="button" style="width: 100%; padding: 0.9rem 1.25rem; background-color: transparent; border: 1.5px solid rgba(239, 233, 222, 0.75); color: #ffffff; border-radius: 0.75rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-            <svg style="width: 16px; height: 16px; color: var(--color-champagne);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-            </svg>
-            <span id="copy-btn-text">Copiar Cuenta Bancaria</span>
-          </button>
+        <!-- Tabla de Datos Bancarios -->
+        <div class="qr-bank-table">
+          <div class="qr-bank-row">
+            <span class="qr-bank-label">Entidad Bancaria:</span>
+            <strong class="qr-bank-value">Banco de Crédito del Perú (BCP)</strong>
+          </div>
+          <div class="qr-bank-row">
+            <span class="qr-bank-label">Cuenta Soles:</span>
+            <strong class="qr-bank-value" style="font-family: monospace;">191-98765432-0-88</strong>
+          </div>
+          <div class="qr-bank-row">
+            <span class="qr-bank-label">Código Interbancario (CCI):</span>
+            <strong class="qr-bank-value" style="font-family: monospace;" id="cci-number">00219100987654320885</strong>
+          </div>
+          <div class="qr-bank-row">
+            <span class="qr-bank-label">Titulares:</span>
+            <span class="qr-bank-value">Margot Ortiz &amp; Andrés Del Valle</span>
+          </div>
         </div>
 
+        <!-- Botón para Copiar CCI / Cuenta -->
+        <button id="copy-bank-btn" type="button" class="qr-copy-btn">
+          <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+          </svg>
+          <span id="copy-btn-text">Copiar Datos de Transferencia (CCI)</span>
+        </button>
+      </div>
+
+      <!-- Opción alternativa: Mesa de Regalos Falabella -->
+      <div style="margin-top: 2rem; text-align: center;">
+        <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(239, 233, 222, 0.75); margin-bottom: 0.5rem;">
+          ¿Deseas obsequiarnos un artículo para nuestro nuevo hogar?
+        </span>
+        <a href="https://www.falabella.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(239,233,222,0.3); border-radius: 9999px; color: var(--color-champagne); font-size: 0.78rem; text-decoration: none; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.25s;">
+          <span>Mesa de Novios Falabella (Evento N° 749281-01)</span>
+          <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
       </div>
 
     </div>
@@ -665,6 +651,17 @@
     <button id="lightbox-close" type="button" style="position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: #ffffff; font-size: 3rem; cursor: pointer; padding: 0.5rem; line-height: 1;" aria-label="Cerrar visor">&times;</button>
     <img id="lightbox-img" style="max-width: 95%; max-height: 88vh; border-radius: 0.5rem; box-shadow: 0 25px 60px rgba(0,0,0,0.6); object-fit: contain;" src="" alt="Foto ampliada"/>
   </div>
+
+  <!-- Widget Flotante de Música de Boda (Music.gif) -->
+  <aside class="floating-music-widget" aria-label="Reproductor de música">
+    <button id="music-toggle-btn" class="music-toggle-btn" type="button" title="Reproducir música de la boda" aria-pressed="false">
+      <img src="iconos/Music.gif" alt="Música de boda" class="music-icon-gif" />
+      <span class="music-widget-label">Música</span>
+    </button>
+    <audio id="wedding-audio" preload="none" loop>
+      <source src="audio/cancion_boda.mp3" type="audio/mpeg" />
+    </audio>
+  </aside>
 
   <!-- Script Controlador Modular -->
   <script src="js/invitacion.js"></script>

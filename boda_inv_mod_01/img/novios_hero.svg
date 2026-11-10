@@ -112,3 +112,4 @@
   <!-- Degradado inferior suave hacia el fondo de lino -->
   <rect y="640" width="1200" height="160" fill="url(#skyGrad)" opacity="0.95"/>
 </svg>
+
