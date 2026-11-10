@@ -652,16 +652,14 @@
     <img id="lightbox-img" style="max-width: 95%; max-height: 88vh; border-radius: 0.5rem; box-shadow: 0 25px 60px rgba(0,0,0,0.6); object-fit: contain;" src="" alt="Foto ampliada"/>
   </div>
 
-  <!-- Widget Flotante de Música de Boda (Music.gif) -->
-  <aside class="floating-music-widget" aria-label="Reproductor de música">
-    <button id="music-toggle-btn" class="music-toggle-btn" type="button" title="Reproducir música de la boda" aria-pressed="false">
-      <img src="iconos/Music.gif" alt="Música de boda" class="music-icon-gif" />
-      <span class="music-widget-label">Música</span>
-    </button>
-    <audio id="wedding-audio" preload="none" loop>
-      <source src="audio/cancion_boda.mp3" type="audio/mpeg" />
-    </audio>
-  </aside>
+  <!-- Botón Flotante de Música Fixed Inferior Derecha (music.gif) -->
+  <button id="floating-music-btn" class="music-floating-btn is-paused" type="button" aria-label="Reproducir o pausar música" title="Reproducir música">
+    <img src="iconos/music.gif" alt="Música de boda" class="music-floating-icon" />
+  </button>
+  <audio id="wedding-music" preload="auto" loop>
+    <source src="audio/cancion_boda.mp3" type="audio/mpeg" />
+    <source src="Bryan Adams -Todo lo que hago lo hago por ti.mp3" type="audio/mpeg" />
+  </audio>
 
   <!-- Script Controlador Modular -->
   <script src="js/invitacion.js"></script>

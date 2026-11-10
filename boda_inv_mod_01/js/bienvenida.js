@@ -38,4 +38,48 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 650);
     });
   }
+
+  /* --------------------------------------------------------------------------
+     CONTROLADOR DE MÚSICA FLOTANTE (music.gif)
+     -------------------------------------------------------------------------- */
+  const musicBtn = document.getElementById('floating-music-btn');
+  const musicAudio = document.getElementById('wedding-music');
+
+  if (musicBtn && musicAudio) {
+    // Si la música ya estaba marcada como activa en la sesión
+    const savedPlaying = sessionStorage.getItem('boda_musica_activa');
+    if (savedPlaying === 'true') {
+      const playPromise = musicAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          musicBtn.classList.remove('is-paused');
+          musicBtn.classList.add('is-playing');
+          musicBtn.setAttribute('title', 'Pausar música');
+        }).catch(() => {
+          musicBtn.classList.add('is-paused');
+          musicBtn.classList.remove('is-playing');
+        });
+      }
+    }
+
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (musicAudio.paused) {
+        musicAudio.play().then(() => {
+          musicBtn.classList.remove('is-paused');
+          musicBtn.classList.add('is-playing');
+          musicBtn.setAttribute('title', 'Pausar música');
+          sessionStorage.setItem('boda_musica_activa', 'true');
+        }).catch((err) => {
+          console.log('Error al reproducir audio:', err);
+        });
+      } else {
+        musicAudio.pause();
+        musicBtn.classList.remove('is-playing');
+        musicBtn.classList.add('is-paused');
+        musicBtn.setAttribute('title', 'Reproducir música');
+        sessionStorage.setItem('boda_musica_activa', 'false');
+      }
+    });
+  }
 });

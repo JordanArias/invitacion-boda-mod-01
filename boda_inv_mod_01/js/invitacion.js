@@ -190,28 +190,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     5. REPRODUCTOR DE MÚSICA NUPCIAL (Music.gif)
+     5. REPRODUCTOR DE MÚSICA FLOTANTE (music.gif)
      -------------------------------------------------------------------------- */
-  const musicBtn = document.getElementById('music-toggle-btn');
-  const weddingAudio = document.getElementById('wedding-audio');
+  const musicBtn = document.getElementById('floating-music-btn');
+  const weddingAudio = document.getElementById('wedding-music');
 
   if (musicBtn && weddingAudio) {
-    musicBtn.addEventListener('click', () => {
+    // Si venía sonando desde la pantalla de bienvenida o interacción previa
+    const savedPlaying = sessionStorage.getItem('boda_musica_activa');
+    if (savedPlaying === 'true') {
+      const playPromise = weddingAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          musicBtn.classList.remove('is-paused');
+          musicBtn.classList.add('is-playing');
+          musicBtn.setAttribute('title', 'Pausar música');
+        }).catch(() => {
+          musicBtn.classList.add('is-paused');
+          musicBtn.classList.remove('is-playing');
+        });
+      }
+    }
+
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (weddingAudio.paused) {
         weddingAudio.play().then(() => {
-          musicBtn.classList.add('playing');
-          musicBtn.setAttribute('aria-pressed', 'true');
-          const label = musicBtn.querySelector('.music-widget-label');
-          if (label) label.textContent = 'Pausar';
+          musicBtn.classList.remove('is-paused');
+          musicBtn.classList.add('is-playing');
+          musicBtn.setAttribute('title', 'Pausar música');
+          sessionStorage.setItem('boda_musica_activa', 'true');
         }).catch((err) => {
           console.log('Reproducción evitada por política de navegador:', err);
         });
       } else {
         weddingAudio.pause();
-        musicBtn.classList.remove('playing');
-        musicBtn.setAttribute('aria-pressed', 'false');
-        const label = musicBtn.querySelector('.music-widget-label');
-        if (label) label.textContent = 'Música';
+        musicBtn.classList.remove('is-playing');
+        musicBtn.classList.add('is-paused');
+        musicBtn.setAttribute('title', 'Reproducir música');
+        sessionStorage.setItem('boda_musica_activa', 'false');
       }
     });
   }

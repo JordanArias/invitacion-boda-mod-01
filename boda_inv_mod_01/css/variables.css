@@ -193,3 +193,109 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ==========================================================================
+   BOTÓN FLOTANTE DE MÚSICA (music.gif)
+   Fixed en parte inferior derecha, borde redondeado suave casi transparente
+   Totalmente adaptado para PC, Tablet y Móvil
+   ========================================================================== */
+.music-floating-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.music-floating-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.42);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+}
+
+.music-floating-btn:active {
+  transform: scale(0.95);
+}
+
+.music-floating-btn.is-playing {
+  border-color: rgba(197, 168, 128, 0.65);
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.2), 0 6px 22px rgba(0, 0, 0, 0.16);
+  animation: musicPulse 2.5s infinite;
+}
+
+.music-floating-btn.is-paused img {
+  opacity: 0.65;
+  filter: grayscale(0.25);
+}
+
+@keyframes musicPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.35), 0 6px 20px rgba(0, 0, 0, 0.14);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(197, 168, 128, 0), 0 6px 20px rgba(0, 0, 0, 0.14);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(197, 168, 128, 0), 0 6px 20px rgba(0, 0, 0, 0.14);
+  }
+}
+
+.music-floating-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Tablet (hasta 768px) */
+@media (max-width: 768px) {
+  .music-floating-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 48px;
+    height: 48px;
+    border-width: 1.2px;
+  }
+  .music-floating-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Móvil (hasta 480px) */
+@media (max-width: 480px) {
+  .music-floating-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .music-floating-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
