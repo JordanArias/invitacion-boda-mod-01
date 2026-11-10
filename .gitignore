@@ -1,21 +1,14 @@
-# Sistema operativo
+# Archivos de sistema
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Editores y temporales
+# Editores
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# Logs
 *.log
 
-# ==============================================================================
-# Ignorar todos los archivos y carpetas fuera del proyecto boda_inv_mod_01
-# ==============================================================================
-/*
-
-# Exceptuar el archivo .gitignore y la carpeta boda_inv_mod_01
-!.gitignore
-!/boda_inv_mod_01/
-!/boda_inv_mod_01/**
