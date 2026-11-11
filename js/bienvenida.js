@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isNavigating) return;
       isNavigating = true;
 
+      // Guardar indicación de que la música debe iniciar al entrar a la invitación
+      sessionStorage.setItem('boda_musica_activa', 'true');
+
       // Vibración táctil si el dispositivo lo soporta (móviles)
       if ('vibrate' in navigator) {
         navigator.vibrate(35);
@@ -36,50 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         window.location.href = 'invitacion.html';
       }, 650);
-    });
-  }
-
-  /* --------------------------------------------------------------------------
-     CONTROLADOR DE MÚSICA FLOTANTE (music.gif)
-     -------------------------------------------------------------------------- */
-  const musicBtn = document.getElementById('floating-music-btn');
-  const musicAudio = document.getElementById('wedding-music');
-
-  if (musicBtn && musicAudio) {
-    // Si la música ya estaba marcada como activa en la sesión
-    const savedPlaying = sessionStorage.getItem('boda_musica_activa');
-    if (savedPlaying === 'true') {
-      const playPromise = musicAudio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          musicBtn.classList.remove('is-paused');
-          musicBtn.classList.add('is-playing');
-          musicBtn.setAttribute('title', 'Pausar música');
-        }).catch(() => {
-          musicBtn.classList.add('is-paused');
-          musicBtn.classList.remove('is-playing');
-        });
-      }
-    }
-
-    musicBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (musicAudio.paused) {
-        musicAudio.play().then(() => {
-          musicBtn.classList.remove('is-paused');
-          musicBtn.classList.add('is-playing');
-          musicBtn.setAttribute('title', 'Pausar música');
-          sessionStorage.setItem('boda_musica_activa', 'true');
-        }).catch((err) => {
-          console.log('Error al reproducir audio:', err);
-        });
-      } else {
-        musicAudio.pause();
-        musicBtn.classList.remove('is-playing');
-        musicBtn.classList.add('is-paused');
-        musicBtn.setAttribute('title', 'Reproducir música');
-        sessionStorage.setItem('boda_musica_activa', 'false');
-      }
     });
   }
 });
