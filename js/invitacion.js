@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
      1. CUENTA REGRESIVA DINÁMICA
      -------------------------------------------------------------------------- */
   // Fecha configurada de la boda (09 de Julio de 2025, 15:00 hrs)
-  const WEDDING_TARGET = new Date('2025-07-09T15:00:00');
+  const WEDDING_TARGET = new Date('2026-12-20T15:00:00');
 
   function updateCountdown() {
     const now = new Date();
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
               musicBtn.setAttribute('title', 'Pausar música');
               musicBtn.setAttribute('aria-label', 'Pausar música');
               sessionStorage.setItem('boda_musica_activa', 'true');
-            }).catch(() => {});
+            }).catch(() => { });
           };
 
           window.addEventListener('click', activateAudio, { once: true });
