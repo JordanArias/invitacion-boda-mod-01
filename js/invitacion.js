@@ -8,32 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      1. CUENTA REGRESIVA DINÁMICA
      -------------------------------------------------------------------------- */
-  // Fecha configurada de la boda (09 de Julio de 2025, 15:00 hrs)
-  const WEDDING_TARGET = new Date('2026-12-20T15:00:00');
+  // Fecha configurada de la boda (24 de Noviembre de 2026, 15:00 hrs)
+  const WEDDING_TARGET = new Date('2026-11-24T15:00:00');
+  let countdownInterval = null;
 
   function updateCountdown() {
     const now = new Date();
-    let distance = WEDDING_TARGET.getTime() - now.getTime();
+    const distance = WEDDING_TARGET.getTime() - now.getTime();
 
-    // Si la fecha ya pasó respecto a la fecha actual del sistema,
-    // se proyecta al siguiente 9 de julio para mantener el segundero activo en demostración
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    // Si la fecha llegó al final o ya pasó, queda fijo en 00 sin reiniciarse
     if (distance <= 0) {
-      const nextTarget = new Date(now.getFullYear(), 6, 9, 15, 0, 0);
-      if (nextTarget <= now) {
-        nextTarget.setFullYear(now.getFullYear() + 1);
-      }
-      distance = nextTarget.getTime() - now.getTime();
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = '00';
+      if (minutesEl) minutesEl.textContent = '00';
+      if (secondsEl) secondsEl.textContent = '00';
+      if (countdownInterval) clearInterval(countdownInterval);
+      return;
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
 
     if (daysEl) daysEl.textContent = days < 10 ? '0' + days : days;
     if (hoursEl) hoursEl.textContent = hours < 10 ? '0' + hours : hours;
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  countdownInterval = setInterval(updateCountdown, 1000);
 
   /* --------------------------------------------------------------------------
      2. COPIAR CUENTA BANCARIA CON TOAST FLOTANTE
